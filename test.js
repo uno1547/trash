@@ -145,9 +145,49 @@
 // console.log(a)
 // 코드실행순서 위에서 아래로 그리고 함수선언은 일단선언하고 호출됬을때 다시 돌아옴
 // ++는 변수대상 
-document.addEventListener("click", function() {
-    const scope = 'hi'
-    console.log(scope)
+function addLeaveEvent(tag){
+    tag.addEventListener("mouseleave", function(){
+        this.style.background = "none"
+    })
+}
+const memberManage = document.querySelector(".manage")
+memberManage.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -200px -45px no-repeat '
 })
-const scope = 'global'
-console.log(scope)
+const statistic = document.querySelector(".statistic")
+statistic.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -409px -45px no-repeat '
+})
+const setting = document.querySelector(".setting")
+setting.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -475px -45px no-repeat '
+})
+const sms = document.querySelector(".sms")
+sms.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -543px -45px no-repeat '
+})
+const community = document.querySelector(".community")
+community.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -615px -45px no-repeat '
+})
+const homepage = document.querySelector(".homepage")
+homepage.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -711px -45px no-repeat '
+})
+const generalsearch = document.querySelector(".generalsearch")
+generalsearch.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -816px -45px no-repeat '
+})
+const sell = document.querySelector(".sell")
+sell.addEventListener("mouseenter", function(){
+    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -987px -45px no-repeat '
+})
+addLeaveEvent(memberManage)
+addLeaveEvent(statistic)
+addLeaveEvent(setting)
+addLeaveEvent(sms)
+addLeaveEvent(community)
+addLeaveEvent(homepage)
+addLeaveEvent(generalsearch)
+addLeaveEvent(sell)
+
