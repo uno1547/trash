@@ -145,49 +145,92 @@
 // console.log(a)
 // 코드실행순서 위에서 아래로 그리고 함수선언은 일단선언하고 호출됬을때 다시 돌아옴
 // ++는 변수대상 
-function addLeaveEvent(tag){
-    tag.addEventListener("mouseleave", function(){
-        this.style.background = "none"
-    })
-}
-const memberManage = document.querySelector(".manage")
-memberManage.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -200px -45px no-repeat '
-})
-const statistic = document.querySelector(".statistic")
-statistic.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -409px -45px no-repeat '
-})
-const setting = document.querySelector(".setting")
-setting.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -475px -45px no-repeat '
-})
-const sms = document.querySelector(".sms")
-sms.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -543px -45px no-repeat '
-})
-const community = document.querySelector(".community")
-community.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -615px -45px no-repeat '
-})
-const homepage = document.querySelector(".homepage")
-homepage.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -711px -45px no-repeat '
-})
-const generalsearch = document.querySelector(".generalsearch")
-generalsearch.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -816px -45px no-repeat '
-})
-const sell = document.querySelector(".sell")
-sell.addEventListener("mouseenter", function(){
-    this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -987px -45px no-repeat '
-})
-addLeaveEvent(memberManage)
-addLeaveEvent(statistic)
-addLeaveEvent(setting)
-addLeaveEvent(sms)
-addLeaveEvent(community)
-addLeaveEvent(homepage)
-addLeaveEvent(generalsearch)
-addLeaveEvent(sell)
+// function addLeaveEvent(tag){
+//     tag.addEventListener("mouseleave", function(){
+//         this.style.background = "none"
+//     })
+// }
+// const memberManage = document.querySelector(".manage")
+// memberManage.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -200px -45px no-repeat '
+// })
+// const statistic = document.querySelector(".statistic")
+// statistic.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -409px -45px no-repeat '
+// })
+// const setting = document.querySelector(".setting")
+// setting.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -475px -45px no-repeat '
+// })
+// const sms = document.querySelector(".sms")
+// sms.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -543px -45px no-repeat '
+// })
+// const community = document.querySelector(".community")
+// community.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -615px -45px no-repeat '
+// })
+// const homepage = document.querySelector(".homepage")
+// homepage.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -711px -45px no-repeat '
+// })
+// const generalsearch = document.querySelector(".generalsearch")
+// generalsearch.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -816px -45px no-repeat '
+// })
+// const sell = document.querySelector(".sell")
+// sell.addEventListener("mouseenter", function(){
+//     this.style.background = ' url("file:///Users/gim-yun-o/Documents/Github/membermanage/yogamanage.png")  -987px -45px no-repeat '
+// })
+// addLeaveEvent(memberManage)
+// addLeaveEvent(statistic)
+// addLeaveEvent(setting)
+// addLeaveEvent(sms)
+// addLeaveEvent(community)
+// addLeaveEvent(homepage)
+// addLeaveEvent(generalsearch)
+// addLeaveEvent(sell)
+// var startButton = document.querySelector(".start")
+// var stopButton = document.querySelector(".stop")
+// var display = document.querySelector(".display")
+// var startTime,timer
+// startButton.addEventListener("click", start)
+// function start() {
+//     startButton.removeEventListener("click", start)
+//     stopButton.addEventListener("click", stop)
+//     startTime = new Date()
+//     timer = setInterval(function() {
+//         var now = new Date()
+//         display.innerHTML = ((now - startTime)/1000).toFixed(2)
+//     },10)
+// }
+// function stop() {
+//     clearInterval(timer)
+//     startButton.addEventListener("click", start)
+// }
 
+var copyButton = document.querySelector(".copy")
+copyButton.addEventListener("click", function() {
+    let copyText = document.querySelector(".input")
+    copyText.select()
+    document.execCommand("copy")
+})
+
+var divCopyButton = document.querySelector(".divCopy")
+divCopyButton.addEventListener("click" ,function(){
+    let copyText = document.querySelector(".copyDiv").innerHTML
+    console.log(copyText)
+    let tempElem = document.createElement('textarea')
+    tempElem.value = copyText
+    document.body.appendChild(tempElem)
+    tempElem.select()
+    document.execCommand("copy")
+    document.body.removeChild(tempElem)
+})
+// var canvas = document.querySelector(".mycanvas")
+// var ctx = canvas.getContext("2d")
+// var img = new Image()
+// img.onload = function() {
+//     ctx.drawImage(img,0,0)
+// }
+// img.src = ".93266269_210531486911180_5669702185548963163_n.jpg"
